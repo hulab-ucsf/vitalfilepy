@@ -169,10 +169,6 @@ class VitalFile:
         self.f.write(struct.pack("i", self.header.Minute))
         self.f.write(struct.pack("d", self.header.Second))
 
-
-    def search(self, offsetInSec: double):
-        self._search()
-
     def getNumSamples(self):
         (self.fileSize - constant.VITALHEADER_SIZE) / (constant.DOUBLE_SIZE * 4)
 
