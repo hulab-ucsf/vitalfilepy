@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="vitalfilepy",
-    version="0.1.1",
+    version="0.1.2",
     author="Peter Li@HuLab UCSF",
     author_email="peter0306@gmail.com",
     description="Software library to read and write binary file for vital sign (.vital format)",
