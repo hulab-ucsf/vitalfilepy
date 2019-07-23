@@ -132,17 +132,8 @@ class VitalFile:
         return s
 
     def _writeStr(self, s: str, size: int):
-        length = len(s)
-        if length > size:
-            length = size
-        for j in range(length):
-            self.f.write(struct.pack("c", s[j].encode('utf-8')))
-        length = size - len(s)
-        if length < 0:
-            length = 0
-        # pad with '\0' for the end
-        for j in range(length):
-            self.f.write(struct.pack("c", b'\0'))
+        format_str = "{0}s".format(size)
+        self.f.write(struct.pack(format_str, s.encode('utf-8')))
 
     def readHeader(self):
         # set to beginning of file
